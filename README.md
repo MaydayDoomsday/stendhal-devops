@@ -4,7 +4,7 @@
 
 Are you looking for adventure? Want to fight for riches?<br>
 Develop yourself and your social standing? Meet new people?<br>
-Do you want to be part of a brave new world?
+Do you want to be part of a brave new world? What to see how pipelines work?
 
 Stendhal is a fully fledged multiplayer online adventures game (MORPG). It is completely open source (client, server, everything).
 
