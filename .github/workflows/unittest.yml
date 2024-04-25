@@ -33,5 +33,5 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVELOPMENT }}
         with:
           nodetail: true
-          title: "Unittest failed"
+          title: "Unittest succeeded - the broskis have nailed it"
           description: "https://stendhalgame.org/development/cireport.html"
