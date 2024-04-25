@@ -3,6 +3,9 @@ name: Java CI
 on: [push, pull_request]
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 8
@@ -10,20 +13,6 @@ jobs:
         with:
           java-version: '8'
           distribution: 'adopt'
-      - type: http
-        name: discord
-        log_level: info
-        format: |
-          {
-            "content": "Woah we're here\n"
-          }  
-        url: https://discord.com/api/webhooks/1101455046954209350/JBL6702BfofnZwAQx3v0LgO2UUbvjttRiYDVvtgGJApvpUoyBQESc_BQ3sa3BJ6HJBTC
-          method: POST
-          headers:
-          Content-Type: application/json
-
-  build:
-    runs-on: ubuntu-latest
       - name: Build with Ant xvfb
         uses: GabrielBB/xvfb-action@v1
         env:
@@ -39,7 +28,7 @@ jobs:
           title: "Unittest failed"
           description: "https://stendhalgame.org/development/cireport.html"
       - uses: sarisia/actions-status-discord@v1
-        if: failure()
+        if: success()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_DEVLOG }}
         with:
